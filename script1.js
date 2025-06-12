@@ -8,7 +8,7 @@ const gradePoints = {
     'C': 5,
     'U': 0
 };
-
+// Define default credits for each course type
 // Motivational quotes array
 const motivationalQuotes = [
     "The future belongs to those who believe in the beauty of their dreams.",
