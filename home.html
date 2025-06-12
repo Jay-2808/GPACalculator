@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student GPA Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a href="#" class="logo">Student GPA Calculator</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="hero">
+            <h1>Calculate Your GPA with Ease</h1>
+            <p>Track your academic progress, set goals, and plan your future with our simple yet powerful GPA calculator. Enter your course details, and we'll instantly calculate your GPA on a 10-point scale.</p>
+        </section>
+        
+        <section class="motivation-box">
+            <h3>Study Motivation</h3>
+            <p id="motivationalQuote">"Success is not final, failure is not fatal: it is the courage to continue that counts."</p>
+            <p class="tooltip">Need a study tip?
+                <span class="tooltiptext" id="studyTip">Break your study sessions into 25-minute blocks with 5-minute breaks in between (Pomodoro Technique).</span>
+            </p>
+        </section>
+        
+        <section class="course-inputs">
+            <h2>Add Courses by Category</h2>
+            <div class="input-group">
+                <div class="input-item">
+                    <label for="theory3">3 Credit Theory Courses</label>
+                    <input type="number" id="theory3" min="0" value="0">
+                </div>
+                <div class="input-item">
+                    <label for="theory4">4 Credit Theory Courses</label>
+                    <input type="number" id="theory4" min="0" value="0">
+                </div>
+                <div class="input-item">
+                    <label for="theory1">1 Credit Courses</label>
+                    <input type="number" id="theory1" min="0" value="0">
+                </div>
+                <div class="input-item">
+                    <label for="lab2">2 Credit Lab Courses</label>
+                    <input type="number" id="lab2" min="0" value="0">
+                </div>
+                <div class="input-item">
+                    <label for="lab1">1.5 Credit Lab Courses</label>
+                    <input type="number" id="lab1" min="0" value="0">
+                </div>
+            </div>
+            <button class="btn" id="generateTable">Generate Course Table</button>
+        </section>
+        
+        <section class="table-container">
+            <h2>Course Details</h2>
+            <p>You can add courses using the options above or directly add rows to this table.</p>
+            <button class="btn" id="addRowBtn">Add New Course Row</button>
+            <table id="courseTable">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Course Name</th>
+                        <th>Credits</th>
+                        <th>Grade</th>
+                        <th>Grade Points</th>
+                        <th>Weighted Points</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="courseTableBody">
+                    <!-- Courses will be added here -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2"><strong>Totals</strong></td>
+                        <td id="totalCreditsInTable">0</td>
+                        <td></td>
+                        <td></td>
+                        <td id="totalWeightedPointsInTable">0</td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        
+        <section class="calculation-display">
+            <h2>GPA Calculation</h2>
+            <div class="calculation-box">
+                <p>GPA = Total Weighted Points / Total Credits</p>
+                <p>GPA = <span id="calcWeightedPoints">0</span> / <span id="calcTotalCredits">0</span> = <span id="calcResult">0.00</span></p>
+            </div>
+        </section>
+        
+        <section class="results">
+            <h2>Your GPA Results</h2>
+            <div>
+                <p>Total Credits: <span id="totalCredits">0</span></p>
+                <div class="gpa-display" id="gpaResult">0.00</div>
+                <button class="download-btn" id="downloadBtn">Download Marksheet</button>
+            </div>
+        </section>
+        
+        <section class="how-to-calculate">
+            <h2>How to Calculate GPA</h2>
+            <p>The GPA is calculated based on a 10-point scale using the following grade points:</p>
+            <div class="grade-conversion">
+                <div class="grade-item">O = 10 points</div>
+                <div class="grade-item">A+ = 9 points</div>
+                <div class="grade-item">A = 8 points</div>
+                <div class="grade-item">B+ = 7 points</div>
+                <div class="grade-item">B = 6 points</div>
+                <div class="grade-item">C = 5 points</div>
+                <div class="grade-item">U = 0 points</div>
+            </div>
+            <p>To calculate your GPA:</p>
+            <ol>
+                <li>Multiply each course's credit hours by the grade points earned</li>
+                <li>Add up all the weighted grade points</li>
+                <li>Divide by the total number of credit hours</li>
+            </ol>
+            <p>For example: If you earned an O (10 points) in a 3-credit course, that's 3 × 10 = 30 weighted points.</p>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Student GPA Calculator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</body>
+</html>
